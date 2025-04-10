@@ -1,13 +1,6 @@
-import pandas as pd
-
-from solar_energy_forecast.preprocess import get_data
-
-
-def main():
-    df = get_data(verbose=True)
-    df.to_csv("output/complete_data.csv")
+from solar_energy_forecast.score import score, dummy_predict, zero_predict
 
 
 if __name__ == "__main__":
-    pd.set_option('display.max_columns', None)
-    main()
+    print(score(dummy_predict))
+    print(score(zero_predict))
